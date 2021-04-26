@@ -1,0 +1,35 @@
+.current-weather {
+  display: flex;
+  justify-content: flex-start;
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__temp,
+  &__description {
+    margin: 0;
+  }
+
+  &__temp {
+    font-size: 35px;
+  }
+
+  &__description {
+    font-size: 26px;
+  }
+
+  &__icon {
+    width: 250px;
+    height: 350px;
+    margin: 30px;
+  }
+
+  &__feels-like {
+    margin: 0;
+    font-size: 24px;
+  }
+}
+span {
+  color: #fe4a73;
+}

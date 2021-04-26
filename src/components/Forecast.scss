@@ -1,0 +1,57 @@
+.forecast {
+  background: rgba(255, 255, 255, 0.199);
+  border-radius: 5px;
+  margin: 5px 50px;
+  padding: 5px;
+  border-radius: 0 80px 0 80px;
+  &__title {
+    margin-left: 15px;
+    color: #fe4a73;
+  }
+
+  &-items {
+    display: flex;
+    overflow-x: scroll;
+    margin: 0 10px 50px 10px;
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+      border-radius: 10px;
+      border-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #fe4a73;
+      border-radius: 10px;
+    }
+  }
+
+  &-item {
+    display: flex;
+    border-right: 1px solid #eaeaea;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+
+    &__time,
+    &__temp,
+    &__description {
+      margin: 2px auto;
+    }
+
+    &__time,
+    &__description {
+      font-weight: 400;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    &__temp {
+      font-weight: 800;
+      color: #ffffff;
+    }
+  }
+}
