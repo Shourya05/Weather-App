@@ -1,6 +1,6 @@
 .search-bar {
   margin: 150px 0px 30px 10px;
-  width: 50px;
+  width: 100px;
 
   &__form {
     display: flex;
@@ -13,7 +13,6 @@
   }
 
   &__input {
-    flex-grow: 1;
     height: 25px;
     padding-left: 10px;
     color: #fff;
