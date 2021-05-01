@@ -9,6 +9,8 @@ import Header from "./components/Header";
 export default class App extends Component {
   state = {
     location: "",
+    city: "",
+    country: "",
     temp: "",
     feelsLike: "",
     description: "",
@@ -32,7 +34,9 @@ export default class App extends Component {
       feelsLike: weatherRes.data.main.feels_like,
       description: weatherRes.data.weather[0].main,
       icon: weatherRes.data.weather[0].icon,
+      country: weatherRes.data.sys.country,
       hourlyForecast: forecastRes.data.hourly,
+      city: this.state.location,
     });
   };
 
@@ -42,7 +46,7 @@ export default class App extends Component {
         <header className="App-header">
           <div className="header-searchbar">
             <SearchBar
-              location={this.state.location}
+              location={this.state.city}
               temp={this.state.temp}
               inputChange={this.onInputChange}
               formSubmit={this.onFormSubmit}
@@ -51,6 +55,8 @@ export default class App extends Component {
           </div>
           {this.state.temp ? (
             <CurrentWeather
+              location={this.state.city}
+              country={this.state.country}
               currTemperature={this.state.temp}
               feelsLike={this.state.feelsLike}
               description={this.state.description}
