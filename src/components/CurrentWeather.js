@@ -50,7 +50,8 @@ export default class CurrentWeather extends Component {
       return <Mist className="current-weather__icon" />;
   }
   render() {
-    console.log(this.props.icon);
+    const city =
+      this.props.location[0].toUpperCase() + this.props.location.slice(1);
 
     return (
       <div className="current-weather">
@@ -69,6 +70,8 @@ export default class CurrentWeather extends Component {
             </p>
             <p className="current-weather__feels-like">
               Feels Like : {this.props.feelsLike} <span>°C</span>
+              <br></br>
+              {city}, {this.props.country}
             </p>
           </div>
         </div>
