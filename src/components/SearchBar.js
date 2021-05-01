@@ -1,18 +1,31 @@
-import React, { Component } from 'react'
-import './SearchBar.scss'
+import React, { Component } from "react";
+import "./SearchBar.scss";
 export default class SearchBar extends Component {
-    render() {
-       
-        return (
-            <div className='search-bar'>
-                <form className="search-bar__form" onSubmit={(e) => this.props.formSubmit(e)}>
-                <button className="search-bar__button" type ="submit">
-                    Search
-                </button>
-                <input className="search-bar__input" required id="search" onChange={ e => this.props.inputChange(e)}></input>
-            </form>
-            </div>
-            
-        )
-    }
+  render() {
+    return (
+      <div id="cover">
+        <form onSubmit={(e) => this.props.formSubmit(e)}>
+          <input
+            type="text"
+            placeholder="Search"
+            required
+            id="search"
+            onChange={(e) => this.props.inputChange(e)}
+          />
+          <button type="submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              className="bi bi-search"
+              viewBox="0 0 15 15"
+            >
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    );
+  }
 }
