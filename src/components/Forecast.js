@@ -9,9 +9,16 @@ class Forecast extends React.Component {
         url: `https://openweathermap.org/img/wn/${f.weather[0].icon}@2x.png`,
         alt: `Image of  ${f.weather[0].description}`,
       };
+
       const description = f.weather[0].description;
-      const unixTimestamp = f.dt;
-      let hour = new Date(unixTimestamp * 1000).getHours();
+
+      let d = new Date();
+      let localOffset = d.getTimezoneOffset() * 60000;
+      let utc = f.dt * 1000 + localOffset;
+      let time = utc + 1000 * +this.props.timeZone;
+      let locationDate = new Date(time);
+      let hour = locationDate.getHours();
+
       let ampm = "AM";
       if (hour === 0) {
         hour = 12;
