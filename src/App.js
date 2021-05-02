@@ -15,6 +15,7 @@ export default class App extends Component {
     feelsLike: "",
     description: "",
     icon: "",
+    timezone: "",
     hourlyForecast: [],
   };
 
@@ -35,6 +36,7 @@ export default class App extends Component {
       description: weatherRes.data.weather[0].main,
       icon: weatherRes.data.weather[0].icon,
       country: weatherRes.data.sys.country,
+      timezone: weatherRes.data.timezone,
       hourlyForecast: forecastRes.data.hourly,
       city: this.state.location,
     });
@@ -67,7 +69,10 @@ export default class App extends Component {
           )}
 
           {this.state.temp ? (
-            <Forecast forecast={this.state.hourlyForecast} />
+            <Forecast
+              forecast={this.state.hourlyForecast}
+              timeZone={this.state.timezone}
+            />
           ) : (
             ""
           )}
